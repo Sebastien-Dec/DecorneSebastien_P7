@@ -1,0 +1,23 @@
+{
+  "development": {
+    "username": "moderator",
+    "password": "moderator",
+    "database": "groupomania",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "test": {
+    "username": "moderator",
+    "password": "moderator",
+    "database": "groupomania",
+    "host": "localhost",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "moderator",
+    "password": "moderator",
+    "database": "groupomania",
+    "host": "localhost",
+    "dialect": "mysql"
+  }
+}
