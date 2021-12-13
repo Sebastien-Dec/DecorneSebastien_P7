@@ -25,11 +25,9 @@ module.exports = {
         type: Sequelize.STRING(250),
         allowNull: false
       },
-      employee: {
-        type: Sequelize.BOOLEAN
-      },
-      moderator: {
-        type: Sequelize.BOOLEAN
+      type: {
+        type: Sequelize.STRING(20),
+        allowNull: false
       },
       state: {
         type: Sequelize.STRING(100)
