@@ -30,8 +30,8 @@ export default {
                 title: '',
                 gifUrl: '',
                 text: '',
-                createdAt: Date,
-                updatedAt: Date
+                createdAt: new Date,
+                updatedAt: new Date
             }
         }
     },

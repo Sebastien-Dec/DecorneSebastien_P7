@@ -23,7 +23,7 @@ app.use(cors());
 // Connection to DataBase Mysql
 const sequelize = new Sequelize(config.database, config.username, config.password, {
     host: config.host,
-    dialect: config.dialect
+    dialect: config.dialect,
 });
 
 try {
@@ -38,7 +38,7 @@ app.use(helmet());
 
 app.use(express.json());
 
-/*const userRoutes = require('./routes/users');
+const userRoutes = require('./routes/users');
 const publicationRoutes = require('./routes/publications');
 const commentRoutes = require('./routes/comments');
 
@@ -47,6 +47,6 @@ app.use('/api/auth', userRoutes);
 //Specifies the path for actions on the publications
 app.use('/api/publications', publicationRoutes);
 //Specifies the path for actions on the comments
-app.use('/api/comments', commentRoutes);*/
+app.use('/api/comments', commentRoutes);
 
 module.exports = app;

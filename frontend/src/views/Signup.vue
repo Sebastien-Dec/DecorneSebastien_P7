@@ -12,9 +12,9 @@
             <input type="password" id="confirmPassword" nae="confirmPassword" placeholder="Saisissez de nouveau votre mot de passe" v-model="user.confirmPassword">
             <div class="type">
                 <p>Qui êtes-vous ?</p>
-                <input type="radio" id="employee" name="employee" v-model="user.employee"/>
+                <input type="radio" id="employee" name="type" value="employee" v-model="user.type"/>
                 <label for="employee">Salarié</label>
-                <input type="radio" id="moderator" name="moderator" v-model="user.moderator"/>
+                <input type="radio" id="moderator" name="type" value="moderator" v-model="user.type"/>
                 <label for="moderator">Modérateur</label>
             </div>
             <button @click.prevent="createUser">Créer mon compte</button>
@@ -35,16 +35,16 @@ export default {
                 email: '',
                 password: '',
                 confirmPassword: '',
-                employee: false,
-                moderator: false,
-                createdAt: Date,
-                updatedAt: Date
+                type: '',
+                createdAt: new Date,
+                updatedAt: new Date
             } 
         }
     },
     methods: {
         createUser: function() {
-            axios.post('http://localhost:3000/api/auth/signup', this.user, {
+            if(this.user.confirmPassword === this.user.password) {
+                axios.post('http://localhost:3000/api/auth/signup', this.user, {
                 headers: {
                     'Content-Type': 'application/json'
                 }
@@ -52,7 +52,12 @@ export default {
             .then(response => {
                 console.log('response',response.data);
             })
-            .catch(error => console.log(error.response.data));
+            .catch(error => console.log(error.response));
+            }
+            else {
+                console.log('Votre saisie est différente de votre mot de passe');
+            }
+            
         }
     }
 }

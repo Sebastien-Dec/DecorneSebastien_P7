@@ -11,12 +11,17 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
+      Publication.belongsTo(models.User, {
+        foreignKey: 'User_id',
+        onDelete: 'CASCADE'
+      })
     }
   };
   Publication.init({
     title: DataTypes.STRING,
     gifUrl: DataTypes.STRING,
-    text: DataTypes.STRING
+    text: DataTypes.STRING,
+    User_id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Publication',

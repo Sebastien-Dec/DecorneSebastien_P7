@@ -30,7 +30,8 @@ module.exports = {
         allowNull: false
       },
       state: {
-        type: Sequelize.STRING(100)
+        type: Sequelize.STRING(100),
+        default: 'Actif'
       },
       createdAt: {
         allowNull: false,

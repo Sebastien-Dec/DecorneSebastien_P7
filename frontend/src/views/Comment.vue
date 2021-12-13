@@ -30,11 +30,10 @@ export default {
                 username: 'sebastien',
                 email: 'sebastien@decorne.com',
                 password: 'sebastien',
-                employee: false,
-                moderator: true,
+                type: 'moderator',
                 state: 'actif',
-                createdAt: Date,
-                updatedAt: Date,
+                createdAt: new Date,
+                updatedAt: new Date,
                 comment: ''
             }
         }   
