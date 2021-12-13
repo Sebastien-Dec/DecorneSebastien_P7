@@ -1,30 +1,41 @@
 <template>
     <div>
-        <div v-if="users.type === 'employee'">
+        <div v-if="user.type === 'employee'">
             <img src="../assets/icon.png" alt="Photo de l'utilisateur" />
         </div>
-        <div v-else-if="users.type === 'moderator'">
+        <div v-else-if="user.type === 'moderator'">
              <img src="../assets/admin.png" alt="Photo du modérateur" />
         </div>
     </div>
 </template>
 
 <script>
+import axios from 'axios';
+
 export default {
     name: 'ImageUser',
     data() { 
         return {
-            users: {
-                id: '0',
-                username: 'sebastien',
-                email: 'sebastien@decorne.com',
-                password: 'sebastien',
-                type: 'moderator',
-                state: 'actif',
-                createdAt: '02/12/2021 11:25',
-                updatedAt: '02/12/2021 11:25'
+            user: {
+                username: '',
+                email: '',
+                password: '',
+                type: '',
+                state: ''
             },
         }   
+    },
+    methods: {
+        imageUsers() {
+            axios.get('http://localhost/3000/Users', this.user, {
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+            })
+            .then(response => {
+                return response.data
+            })
+        }    
     }
 }
 </script>

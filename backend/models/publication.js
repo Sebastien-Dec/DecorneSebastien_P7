@@ -11,8 +11,8 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Publication.belongsTo(models.User, {
-        foreignKey: 'User_id',
+      Publication.belongsTo(models.user, {
+        foreignKey: 'User_Id',
         onDelete: 'CASCADE'
       })
     }
@@ -21,7 +21,7 @@ module.exports = (sequelize, DataTypes) => {
     title: DataTypes.STRING,
     gifUrl: DataTypes.STRING,
     text: DataTypes.STRING,
-    User_id: DataTypes.INTEGER
+    User_Id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Publication',

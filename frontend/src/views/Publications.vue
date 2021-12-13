@@ -37,12 +37,12 @@ export default {
     data() { 
         return {
             users: [{
-                id: 0,
+                id: 1,
                 username: 'sebastien',
                 email: 'sebastien@decorne.com',
                 password: 'sebastien',
                 type: 'moderator',
-                state: 'actif',
+                state: 'Actif',
                 createdAt: '02/12/2021 11:25',
                 updatedAt: '02/12/2021 11:25',
                 title: 'Superbe Gif',
@@ -51,12 +51,12 @@ export default {
                 text: 'Génial'
             },
             {
-                id: 1,
+                id: 2,
                 username: 'Marilyne',
                 email: 'marilyne@decorne.com',
                 password: 'marilyne',
                 type: 'employee',
-                state: 'actif',
+                state: 'Actif',
                 createdAt: '03/12/2021 15:07',
                 updatedAt: '03/12/2021 15:08',
                 title: 'Pas top celui la',
@@ -70,7 +70,8 @@ export default {
     methods: {
         toggleModale: function() {
             this.revele = !this.revele
-        }
+        },
+
     }
 }
 </script>

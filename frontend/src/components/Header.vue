@@ -1,6 +1,6 @@
 <template>
     <header id="header">
-        <nav class='navbar' id="connectionBar" v-if="!['welcome', 'newpost', 'home'].includes($route.name)">
+        <nav class='navbar' id="connectionBar" v-if="!['welcome', 'newpost', 'publications'].includes($route.name)">
             <HeaderLogo />
             <ButtonLogin />
             <ButtonSignup />

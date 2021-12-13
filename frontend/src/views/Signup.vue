@@ -9,7 +9,8 @@
             <label for="password">Votre mot de passe</label>
             <input type="password" id="password" name="password" placeholder="Votre mot de passe" v-model="user.password" />
             <label for="confirmPassword">Confirmer votre mot de passe</label>
-            <input type="password" id="confirmPassword" nae="confirmPassword" placeholder="Saisissez de nouveau votre mot de passe" v-model="user.confirmPassword">
+            <input type="password" id="confirmPassword" name="confirmPassword" placeholder="Saisissez de nouveau votre mot de passe" v-model="user.confirmPassword">
+            <p class='error' v-if="user.confirmPassword !== user.password">Votre mot de passe ne correspond pas à votre saisie</p>
             <div class="type">
                 <p>Qui êtes-vous ?</p>
                 <input type="radio" id="employee" name="type" value="employee" v-model="user.type"/>
@@ -38,7 +39,7 @@ export default {
                 type: '',
                 createdAt: new Date,
                 updatedAt: new Date
-            } 
+            },
         }
     },
     methods: {
@@ -47,18 +48,15 @@ export default {
                 axios.post('http://localhost:3000/api/auth/signup', this.user, {
                 headers: {
                     'Content-Type': 'application/json'
-                }
+                },
             })
             .then(response => {
                 console.log('response',response.data);
+                return response.data;
             })
             .catch(error => console.log(error.response));
             }
-            else {
-                console.log('Votre saisie est différente de votre mot de passe');
-            }
-            
-        }
+        } 
     }
 }
 </script>
@@ -73,6 +71,10 @@ $colorText: #FF3D1D;
         text-align: center;
         color: $colorText;
     }
+}
+
+.error {
+    color: red;
 }
 
 .link-login {

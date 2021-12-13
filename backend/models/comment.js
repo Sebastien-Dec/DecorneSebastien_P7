@@ -11,15 +11,15 @@ module.exports = (sequelize, DataTypes) => {
      */
     static associate(models) {
       // define association here
-      Comment.belongsTo(models.User, {
-        foreignKey: 'User_id',
+      Comment.belongsTo(models.user, {
+        foreignKey: 'User_Id',
         onDelete: 'CASCADE'
       })
     }
   };
   Comment.init({
-    comment: DataTypes.STRING,
-    User_id: DataTypes.INTEGER
+    comment: DataTypes.STRING(250),
+    User_Id: DataTypes.INTEGER
   }, {
     sequelize,
     modelName: 'Comment',
