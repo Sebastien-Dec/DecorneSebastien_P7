@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Require user authentication
-const auth = require('../middleware/authorize');
+const auth = require('../middleware/auth');
 
 //Access middleware
 const commentCtrl = require('../controllers/comments');
