@@ -26,8 +26,6 @@
 import ImageUser from '../components/ImageUser.vue'
 import Modale from '../components/Modale.vue'
 
-
-
 export default {
     name: 'Publications',
     components:  {

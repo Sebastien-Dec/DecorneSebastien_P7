@@ -2,7 +2,7 @@ const express = require('express');
 const router = express.Router();
 
 //Require user authentication
-const auth = require('../middleware/auth');
+const auth = require('../middleware/authorize');
 
 //Access middleware
 const publicationCtrl = require('../controllers/publications');

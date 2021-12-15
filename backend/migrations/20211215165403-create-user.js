@@ -27,7 +27,8 @@ module.exports = {
         allowNull: false
       },
       state: {
-        type: Sequelize.STRING(20)
+        type: Sequelize.STRING(20),
+        defaultValue: 'Actif'
       },
       createdAt: {
         allowNull: false,
@@ -38,7 +39,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
-  },
+  }, 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Users');
   }

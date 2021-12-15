@@ -26,7 +26,7 @@ export default {
     },
     methods: {
         loginUser: function() {
-            axios.get('http://localhost:3000/api/auth/login', this.user, {
+            axios.post('http://localhost:3000/api/auth/login', this.user, {
                 headers: {
                     "Content-Type": "application/json"
                 }

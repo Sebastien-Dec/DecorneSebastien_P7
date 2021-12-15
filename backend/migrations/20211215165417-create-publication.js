@@ -17,7 +17,7 @@ module.exports = {
         allowNull: false
       },
       text: {
-        type: Sequelize.STRING(250)
+        type: Sequelize.STRING
       },
       User_Id: {
         type: Sequelize.INTEGER,
@@ -37,7 +37,7 @@ module.exports = {
         type: Sequelize.DATE
       }
     });
-  },
+  }, 
   down: async (queryInterface, Sequelize) => {
     await queryInterface.dropTable('Publications');
   }
