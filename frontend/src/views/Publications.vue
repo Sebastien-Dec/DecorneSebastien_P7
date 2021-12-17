@@ -34,34 +34,27 @@ export default {
     },
     data() { 
         return {
-            users: [{
-                id: 1,
-                username: 'sebastien',
-                email: 'sebastien@decorne.com',
-                password: 'sebastien',
-                type: 'moderator',
-                state: 'Actif',
-                createdAt: '02/12/2021 11:25',
-                updatedAt: '02/12/2021 11:25',
-                title: 'Superbe Gif',
-                createdAtPublication: '03/12/2021 11:54',
-                gifUrl: 'https://media2.giphy.com/media/lvY2I2F5ZVReZTDksy/200w.webp',
-                text: 'Génial'
+            users: {
+                username: '',
+                email: '',
+                password: '',
+                type: '',
+                state: '',
+                createdAt: '',
+                updatedAt: '',
             },
-            {
-                id: 2,
-                username: 'Marilyne',
-                email: 'marilyne@decorne.com',
-                password: 'marilyne',
-                type: 'employee',
-                state: 'Actif',
-                createdAt: '03/12/2021 15:07',
-                updatedAt: '03/12/2021 15:08',
-                title: 'Pas top celui la',
-                createdAtPublication: '03/12/2021 15:09',
-                gifUrl: 'https://media.giphy.com/media/rhnSEJmB9NO42ykQYz/giphy.gif',
-                text: 'Non il est super'
-            }],
+            publications: {
+                title: '',
+                createdAtPublication: '',
+                gifUrl: '',
+                text: '',
+                User_Id: ''
+            },
+            comments: {
+                comment: '',
+                User_Id: '',
+                Publication_Id: ''
+            },
             revele: false
         }
     },
@@ -69,6 +62,7 @@ export default {
         toggleModale: function() {
             this.revele = !this.revele
         },
+        
 
     }
 }

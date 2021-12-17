@@ -37,8 +37,8 @@ export default {
                 password: '',
                 confirmPassword: '',
                 type: '',
-                createdAt: new Date,
-                updatedAt: new Date
+                createdAt: '',
+                updatedAt: ''
             },
         }
     },
@@ -56,9 +56,10 @@ export default {
             })
             .catch(error => console.log(error.response));
             }
-        } 
-    }
+        }
+    } 
 }
+
 </script>
 
 <style lang="scss" scoped>

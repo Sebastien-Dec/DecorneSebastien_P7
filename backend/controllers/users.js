@@ -1,9 +1,13 @@
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const User = require('../models/user');
+const validateEmail = require('../middleware/functions');
+const validateUser = require('../middleware/functions');
 
 // Creating a user
 exports.signup = (req, res, next) => {
+    validateUser(user),
+    validateEmail(email),
     // Password Hash
     bcrypt.hash(req.body.password, 10)
         .then(hash => {
@@ -11,11 +15,13 @@ exports.signup = (req, res, next) => {
                 username: req.body.username,
                 email: req.body.email,
                 password: hash,
-                emplyee: req.body.employee,
-                moderator: req.body.moderator
+                type: req.body.type,
+                state: req.body.state,
+                createdAt: new Date,
+                updatedAt: new Date
             };
-            User.create(user)
-                .then(() => res.satus(201).json({ messsage: 'Utilisateur créé !' }))
+           User.create(user)
+                .then(() => { res.satus(201).json({ messsage: 'Utilisateur créé !' })})
                 .catch(error => res.status(400).json({ error }));
         })
         .catch(error => res.status(500).json({ error }));
